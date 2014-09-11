@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:android="http://schemas.android.com/apk/res/android"
-           id="msopentech.azure.NotificationHub"
-      version="0.0.5">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="msopentech.azure.NotificationHub"
+        version="0.0.1">
+  
   <name>Azure Notification Hub</name>
 
   <description>Cordova Azure Notification Hub Plugin</description>
   <license>Apache 2.0</license>
   <keywords>cordova, azure, push, notifications, hub</keywords>
-  <repo>https://github.com/sgrebnov/cordova-plugin-azure-notificationhub</repo>
-  <issue>https://github.com/sgrebnov/cordova-plugin-azure-notificationhub/issues</issue>
+  <repo>https://github.com/PhonegapProjects/cordova-plugin-azure-notificationhub/</repo>
+  <issue>https://github.com/PhonegapProjects/cordova-plugin-azure-notificationhub/issues</issue>
 
   <js-module src="www/Promise.js" name="Promise"/>
 
@@ -30,18 +31,18 @@ xmlns:android="http://schemas.android.com/apk/res/android"
       <Capability Name="ID_CAP_PUSH_NOTIFICATION"/>
     </config-file>
 
-    <framework src="src/wp/Microsoft.WindowsAzure.Messaging.dll" custom="true"/>
+    <framework src="src/wp/libs/Microsoft.WindowsAzure.Messaging.dll" custom="true"/>
     <source-file src="src/wp/NotificationHub.cs" />
   </platform>
 
-  <!-- windows8 -->
+  <!-- windows8 
   <platform name="windows8">
     <framework src="src/windows8/Microsoft.WindowsAzure.Messaging.Managed.dll" custom="true"/>
     <framework src="src/windows8/NotificationHubRuntimeProxy.winmd" custom="true"/>
     <js-module src="src/windows8/NotificationHubProxy.js" name="NotificationHubProxy" >
       <clobbers target="" />
     </js-module>
-  </platform>
+  </platform>-->
 
   <!-- android -->
   <platform name="android">
@@ -71,8 +72,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <source-file src="src/android/NotificationHub.java" target-dir="src/msopentech/azure" />
 
-    <lib-file src="src/android/google-play-services.jar" />
-    <lib-file src="src/android/notification-hubs-0.1.jar" />
+    <lib-file src="src/android/libs/google-play-services.jar" />
+    <lib-file src="src/android/libs/notification-hubs-0.1.jar" />
+    <!--<source-file src="src/android/libs/gcm.jar" target-dir="libs/" />-->
+
   </platform>
   <!-- ios -->
   <platform name="ios">
